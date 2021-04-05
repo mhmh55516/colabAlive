@@ -29,8 +29,8 @@ function clickConnect() {
 
 function clickDismiss() {
 	try {
-		document.querySelector("colab-connect-button").shadowRoot.getElementById('connect').click();
 		//colab design changed again
+		document.querySelector("paper-tab").querySelector("paper-icon-button").shadowRoot.getElementById('icon').click();
 		//document.querySelector('colab-sessions-dialog').shadowRoot.querySelector('.dismiss').click();
 		console.log('clicked on dismiss button');
 	} catch (error) {

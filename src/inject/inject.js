@@ -18,6 +18,7 @@ chrome.extension.sendMessage({}, function (response) {
 function clickConnect() {
 	try {
 		 document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
+		 document.querySelector("colab-run-button").click();
 		// this also works, if above one doesn't work, comment it and uncomment below one
 		//document.querySelector("colab-connect-button").shadowRoot.getElementById('connect').click();
 		setTimeout(clickDismiss, 500);

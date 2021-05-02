@@ -1,3 +1,18 @@
+function randRange(data) {
+       var newTime = data[Math.floor(data.length * Math.random())];
+       return newTime;
+}
+
+function toggleSomething() {
+       var timeArray = new Array(60000, 90000, 100000, 120000, 190000);
+       // do stuff, happens to use jQuery here (nothing else does)
+       clickConnect();
+
+       clearInterval(timer);
+       timer = setInterval(toggleSomething, randRange(timeArray));
+}
+
+
 chrome.extension.sendMessage({}, function (response) {
 	var readyStateCheckInterval = setInterval(function () {
 		if (document.readyState === "complete") {
@@ -7,7 +22,7 @@ chrome.extension.sendMessage({}, function (response) {
 			// This part of the script triggers when page is done loading
 			console.log("Hello. This message was sent from scripts/inject.js");
 			// ----------------------------------------------------------
-			setInterval(clickConnect, 60000);	//1 minute
+			var timer = setInterval(toggleSomething, 60000);	//1 minute
 			//setInterval(clickConnect, 20000);	//20 sec
 		}
 	}, 10);

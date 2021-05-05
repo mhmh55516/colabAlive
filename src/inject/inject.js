@@ -32,11 +32,11 @@ chrome.extension.sendMessage({}, function (response) {
 // Credit to https://medium.com/@shivamrawat_756/how-to-prevent-google-colab-from-disconnecting-717b88a128c0
 function clickConnect() {
 	try {
-		 document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
+		 //document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
 		 document.querySelector("colab-run-button").click();
 		// this also works, if above one doesn't work, comment it and uncomment below one
 		//document.querySelector("colab-connect-button").shadowRoot.getElementById('connect').click();
-		setTimeout(clickDismiss, 500);
+		//setTimeout(clickDismiss, 500);
 		console.log("Keeping Colab Alive!");	
 	} catch (error) {
 		console.log(error);
